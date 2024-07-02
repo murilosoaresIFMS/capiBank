@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style/home1.css">
+    <script type = 'module' src = './script/home.js'></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="barra" class="cima">
+       
+        <div class="titulo">
+            <span>CapiBank</span>
+
+        </div>
+
+        <div class="search">
+                <span><i class='bx bx-search-alt-2'></i></span>
+
+            <input type="text" id="searchInput" placeholder="Pesquisar">
+        </div>
+
+        <!-- ---------------------------------------------------- -->
+        
+        <div class="user">
+            <span><i class='bx bxs-caret-down-circle'></i></span>
+
+            <span id = 'name'></span>
+
+            <div class="imag">
+                <img src="#" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    <nav id="menu">
+
+        <header >
+            <a href="#" class="btn-expandir" onclick="abrirMenu()" ><img src="./imgs/capi.png" alt=""></a>
+        </header>
+
+        <div class="part1">
+        <a class="color" href="#">
+            <span class="icon"><i class='bx bxs-grid-alt'></i></span>
+            <span class="txt-link">Saldo</span>
+        </a>
+
+        <a href="#">
+            <span class="icon"><i class='bx bxs-bank'></i></span>
+            <span class="txt-link">Transferências</span>
+        </a>
+
+        <a href="#">
+            <span class="icon"><i class='bx bx-credit-card'></i></span>
+            <span class="txt-link">Notificações</span>
+        </a>
+
+        <a href="#">
+            <span class="icon"><i class='bx bx-credit-card'></i></span>
+            <span class="txt-link">Pagamentos</span>
+        </a>
+    </div>
+
+    <div class="part2">
+        <li class="item-menu">
+            <a href="#">
+                <span class="icon"><i class='bx bxs-user-circle' ></i></span>
+                <span class="txt-link">Minha Conta</span>
+            </a>
+
+            <a href="#">
+                <span class="icon"><i class='bx bxs-cog' ></i></span>
+                <span class="txt-link">Configurações</span>
+            </a>
+
+            <a href="#">
+                <span class="icon"><i class='bx bx-body'></i></span>
+                <span class="txt-link">Ajuda</span>
+            </a>
+
+            <a href="#" onclick="fecharMenu()">
+                <span class="icon"><i class='bx bx-log-out-circle'></i></span>
+                <span class="txt-link">Diminuir</span>
+            </a>
+    </div>
+    </nav>
+
+    <!-- ---------------------------------------------------- -->
+
+
+    <div id="conteudo-1" class="container">
+
+        <div class="main">
+
+            <div class="top">
+
+                <div class="titulo-top">
+                    <span>Conta</span>
+                </div>
+
+                <div class="carteira">
+                    
+                    <div class="saldo">
+                        <span>Saldo Disponivel</span>
+                        <i class='bx bxs-coin'></i>
+                    </div>
+                   
+                    <div class="money">
+                        <span><i class='bx bx-low-vision'></i></span>
+                        <span><i class='bx bx-dots-horizontal-rounded'></i></span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- -------------half----------------------- -->
+            <!-- savings = cofrinho -->
+
+            <div class="half">
+
+                <div class="savings">
+                    <div class="capix">
+                        <img src="imgs/capix.jpg" alt="">
+
+                    </div>
+
+                    <div class="description">
+                        <h1>Cofrinho</h1> 
+                        <span>R$ 480,00</span>                       
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ------baixo---------- -->
+
+            <div class="bottom_bx">
+
+                <div class="meio">
+
+                    <div class="cartao">
+                        <div class="info">
+                            <h1>Shopping</h1>
+                            <span>Pra bom consumidor,</br>
+                                muito cashback basta</span>
+    
+                                <span class="sub1">Faça suas compras com tranquilidade
+                                                    sabendo que você será recompensado com
+                                                    nosso generoso cashback.</span>
+    
+                                <div class="botao">
+                                    <span>CapiBank Shop</span>
+                                </div>
+    
+                            </div>
+
+                </div>
+                <div class="ilustracao">
+                    <img src="imgs/cartao.jpg" alt="">
+                </div>
+            </div>
+                
+
+               
+            </div>
+
+
+
+        </div>
+
+
+         <!-- --------------------------------- -->
+
+         <div class="linha">
+                      <hr>  
+         </div>
+
+
+    
+        <div id="conteudo-1" class="main-2">
+
+            <div class="info2">
+                <span class="titulo2">Transações</span>
+                <span class="icon2"><i class='bx bx-dots-horizontal-rounded'></i></span>                    
+            </div>
+            
+            <div class="transacoes">    
+                
+                    <div class="notificacao">
+
+                        <div class="marcacao">
+                    
+                        </div>
+                        <div class="icon">
+                             <i class='bx bxs-dollar-circle' ></i>
+                         </div>
+     
+                     <div class="texto">
+                        <div class="titu"> <span>Luva de Pedreiro</span></div>
+                         <span>Olha o Pix</span>
+                         <span>R$ 250,00</span>
+                     </div>
+
+                     <div class="seta">
+                            <i class='bx bxs-chevron-right'></i>
+                     </div>
+
+                     </div>
+                     <!-- --------------------------------- -->
+
+                     <div class="notificacao" class="noti2">
+                        <div class="marcacao">
+                    
+                        </div>
+                        <div class="icon2">
+                             <i class='bx bxs-dollar-circle' ></i>
+                         </div>
+     
+                     <div class="texto">
+                        <div class="titu"> <span>Nova Estrela</span></div>
+                         <span>Compra no Debito</span>
+                         <span>R$ 250,00</span>
+                     </div>
+
+                     <div class="seta">
+                            <i class='bx bxs-chevron-right'></i>
+                     </div>
+
+
+                     
+                     </div>
+
+                      <!-- --------------------------------- -->
+
+                      <div class="notificacao">
+
+                        <div class="marcacao">
+                    
+                        </div>
+
+                        <div class="icon">
+                             <i class='bx bxs-dollar-circle' ></i>
+                         </div>
+     
+                     <div class="texto">
+                        <div class="titu"> <span>Jogo do Tigrinho</span></div>
+                         <span>Olha o Pix</span>
+                         <span>R$ 500,00</span>
+                     </div>
+
+                     <div class="seta">
+                            <i class='bx bxs-chevron-right'></i>
+                     </div>
+
+                    </div>
+
+                     <!-- --------------------------------- -->
+
+                     <div class="notificacao">
+
+                        <div class="marcacao">
+                    
+                        </div>
+
+                        <div class="icon">
+                             <i class='bx bxs-dollar-circle' ></i>
+                         </div>
+     
+                     <div class="texto">
+                        <div class="titu"> <span>Jogo do Tigrinho</span></div>
+                         <span>Olha o Pix</span>
+                         <span>R$ 2.000</span>
+                     </div>
+
+                     <div class="seta">
+                            <i class='bx bxs-chevron-right'></i>
+                     </div>
+
+
+
+            
+        </div>
+
+    </div>
+   
+
+
+    <script type="text/javascript" src="Scripts/central.js"></script>
+
+    
+</body>
+</html>

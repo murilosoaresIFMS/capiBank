@@ -1,75 +1,69 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./style/login.css">
-    <script type = "module" src="./script/login.js"></script>
-    <title>CapyBank Login</title>
+    <link rel="stylesheet" href="style/styleLogin.css">
+    <script type = "module" src = "script/login.js"></script>
+    <title>Capybank Login</title>
 </head>
-
 <body>
-    <div id = 'outcome'></div>
-    <div class="container">
-        <div class="container-left">
-            <div class="logo-tudo">
-                <div class="logo">
-                    <img src="./imgs/capi.png" alt="">
-                    <span>Acesse sua conta</span>
-                </div>
-            </div>
+
+    <div class="mae">
+
+        <div class="direita">
+
+        </div>
+
+        <div class="login-central">
+
             <div class="form-box">
-                <form method = "POST" action = "/dashboard.html">
-
-                    <section>
-                        <label for = 'cpf'>ID:</label>
-                        <div class= 'Input'>
-                            <input name = 'cpf' type="text" id = "cpf" placeholder="Insira seu User ID" maxlength = '14'>
-                        </div>
-                        <div class = 'Error-Message'></div>
-                    </section>
-
-                    <section>
-                        <label for = 'senha'>Senha:</label>
-                        <div class="Input">
-                            <input name = 'senha' type="password" id="senha" placeholder="passphase">
-                        </div>
-                        <div class = 'Error-Message'></div>
-                    </section>
+                <span class="titulo">Acesse sua conta</span>
+          
+                <form>
                     
+                    <div class="input-box">
+                        <label for = 'cpf'>IDentificação: </label>
+                        <div class = 'Inputs'> <input name = 'cpf' type="text" id="cpf" placeholder= "Insira seu CPF" maxlength="14"> </div>
+                        <div class="Error-Message"></div>
+                    </div>                  
+                    <div class="input-box">
+                        <label for = 'senha'> Senha: </label>
+                        <div class = 'Inputs'> <input name='senha' type="password" id="senha" placeholder="Digite seu passphase"> </div>
+                        <div class="Error-Message"></div>
+                    </div>
+
                     <div class="remember">
                         <label>
                             <input type="checkbox" > Remember-me
                         </label>
                         <a>Forgot password</a>
                     </div>
+
+                    <input type="submit" class="btn" value="Login" id="submit">
+                    
+                </form>
+                    
+
+                   
                     <div class="center-button">
                         <div class="bott">
-                            <input type="submit" class="btn" value="Login" id = "submit">
-                            <input type = "button" class="btn" id = "forgot-pwd" value="Esqueci Minha Conta">
                         </div>
                     </div>
-                </form>
+                <!--
+                    <input type="button" class="btn" value="Recuperar Acesso" id="forgot-pwd">
+                    
+                    <input type="button" class="btn" value="Criar Conta">
+                -->
             </div>
-            <div id = 'outcome'></div>
-        </div>
-        <div class="container-direita">
-            <div class="baner">
-               
-            </div>
-            <div class="titulo">
-                <h1> Ainda não possui cadastro? </h1>
-                <a href = "cadastro.html"> Entre aqui! </a>
-            </div>
-        </div>
-    </div>
-    
-    <div class = 'flash-error'>
-        <i class='bx bx-error-circle' ></i>
-        <div>ID ou senha inválido!</div>
-    </div>
 
+        </div>
+    
+        <div class="esquerda">
+    
+        </div>
+
+    </div>
+   
 </body>
 </html>

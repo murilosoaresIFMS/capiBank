@@ -17,10 +17,10 @@ const relation = [
 // Função principal
 function validateForm() {
 
-    const Inputs = document.querySelectorAll('.Input')
+    const Inputs = document.querySelectorAll('.Inputs')
     const submit = document.querySelector('#submit')
-    const bx = document.querySelectorAll('.bx')
-
+    //const bx = document.querySelectorAll('.bx')
+    
     const format = DataFormatter()
     const validate = DataValidator()
     
@@ -36,6 +36,7 @@ function validateForm() {
             if (input.id == 'cpf') { format.CPF(e) }
             if (input.id == 'telefone') { format.phone(e) }
         })
+        /*
         input.addEventListener('blur', () => {
             validate.checkRelation(input, relation)
             validate.toggleSubmit(submit, Inputs)
@@ -45,7 +46,8 @@ function validateForm() {
             validate.checkRelation(input, relation)            
             validate.toggleSubmit(submit, Inputs)
         })
-       
+        */
+       /*
         bx.forEach((check) => {
             check.addEventListener('click', () => {
                 check.classList.toggle('show')
@@ -54,7 +56,7 @@ function validateForm() {
                 if (input.id == 'confirmar-senha' && check.id == 'p2') { input.type = showPassword }
             })
         })
-    
+        */
     })
 
     submit.addEventListener('click', (e) => {
@@ -65,10 +67,7 @@ function validateForm() {
 
 }
 
-
-
-// Ativa e desativa o submit com base na validação dos inputs && se todos estão preenchidos
-
+ 
 
 // Envia as informações para servidor
 function sendFormData(form) {
@@ -91,9 +90,18 @@ function sendFormData(form) {
     }
 
     fetch('http://localhost:8080/saveData', requestOptions).then(async (response) => {
+
         const result = await response.json()
-        render.outcome(result.message)
+        
         form.reset()
+
+        if (response.status == 200) { 
+            alert ("Conta cadastrada")
+            return
+        }
+
+        alert(result.message)
+
     })
 
 }

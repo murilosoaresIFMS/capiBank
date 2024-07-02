@@ -1,77 +1,132 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Cadastro</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel='stylesheet' href='./style/cadastro.css'>
-    <script type = 'module' src = './script/cadastro.js'></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/nova_con.css">
+  <script type = "module" src = './script/cadastro.js'></script>
+  <title>Que Bom Você Aqui ;)</title>
 </head>
 
 <body>
 
-    <div>
-        <div id = 'outcome'></div>
-        <h1> Cadastro - Capibank (PROTÓTIPO) </h1>
-    </div>
-    <form method='POST'>
-        <section>
-            <label for='nome'>Nome Completo:</label>
-            <div class='Input'>
-                <input name='nome' type='text' id='nome' autocomplete='off' maxlength="100" oninput="this.value = this.value.replace(/[^a-zA-Z, ' ']/g, '')">
-            </div>
-            <div class='Error-Message'></div>
-        </section>
-        <section>
-            <label for='cpf'> CPF: </label>
-            <div class='Input'>
-                <input name='cpf' type='text' id='cpf' placeholder='___.___.___-__' autocomplete='off' maxlength="14" oninput="this.value = this.value.replace(/[^0-9, '.']/g, '')">
-            </div>
-            <div class='Error-Message'></div>
-        </section>   
-        <section>
-            <label for='email'> Email: </label>
-            <div class='Input'>
-                <input name='email' type='email' id='email' autocomplete='off' maxlength="50">
-            </div>
-            <div class='Error-Message'></div>
-        </section>
-        <section>
-            <label for='telefone'> Telefone </label>
-            <div class='Input'>
-                <input name='telefone' type='tel' id='telefone' placeholder='(__) ____-____' autocomplete='off' maxlength="14">
-            </div>
-            <div class='Error-Message'></div>
-        </section>
-        <section>
-            <label for='data_nascimento'>Data de nascimento: </label>
-            <div class='Input'>
-                <input name='data_nascimento' type='date' id='data' autocomplete='off'>
-            </div>
-            <div class='Error-Message'></div>
-        </section>
-        <section>
-            <label for='senha'> Senha: </label>
-            <div class='Input'>
-                <input name='senha' type='password' id='senha' autocomplete='off'>
-                <i class='bx bx-show' id='p1'></i>
-            </div>
-            <div class='Error-Message'></div>
-        </section>
-        <section>
-            <label for='confirmar_senha'> Confirme a senha: </label>
-            <div class='Input'>
-                <input name='confirmar_senha' type='password' id='confirmar-senha' autocomplete='off'>
-                <i class='bx bx-show' id='p2'></i>
-            </div>
-            <div class='Error-Message'></div>
-        </section>
-        <button type='submit' id = 'submit'>Enviar </button>
-    </form>
-    <a href = "login.html"> Voltar </a>
+  <div class="container">
 
+    <!-- imagem -->
+    <div class="parte1">
+      <img src="./imgs/capibaner.jpg" alt="">
+    </div>
+
+    <!-- -------------------------------------- -->
+
+    <div class="container-parte2">
+
+      <div class="cima">
+
+        <div class="txtBase">
+          <Span>Criar nova Conta</Span>
+
+          <div class="subTitle">
+            <Span>Já é registrado?</Span>
+            <a href="login.html">Entre aqui.</a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- PARTE DO FORMULARIO---------------- -->
+
+      <div class="form-box">
+
+        <form>
+
+          <div class="input-box">
+            <div class="titulo">
+              <h2>Nome completo</h2>
+              <h1>*</h1>
+            </div>
+            <div class = "Inputs"> <input type="text" name = 'nome' id = 'nome' placeholder="Seu nome"> </div>
+            <div class = "Error-Message"></div>
+          </div>
+
+          <div class="input-box">
+            <div class="titulo">
+              <h2>CPF</h2>
+              <h1>*</h1>
+            </div>
+            <div class = "Inputs"> <input type="text" name = 'cpf' id = 'cpf' placeholder="Seu CPF"> </div>
+            <div class = "Error-Message"></div>
+          </div>
+
+          <div class="input-box">
+            <div class="titulo">
+              <h2>Email</h2>
+              <h1>*</h1>
+            </div>
+            <div class = "Inputs"> <input type="text" name = "email" id = 'email' placeholder = "Seu Email"> </div>
+            <div class = "Error-Message"></div>
+          </div>
+
+          <div class="input-box">
+            <div class="titulo">
+              <h2>Telefone</h2>
+              <h1>*</h1>
+            </div>
+            <div class = "Inputs"> <input type="text" name = "telefone" id = 'telefone' placeholder="Seu Telefone"> </div>
+            <div class = "Error-Message"></div>
+          </div>
+
+          
+          <div class="input-box">
+            <div class="titulo">
+              <h2>Data de nascimento</h2>
+              <h1>*</h1>
+            </div>
+            <div class = "Inputs"> <input type="date" name = "data_nascimento" id = 'data_nascimento' placeholder= "Sua data de nascimento"> </div>
+            <div class = "Error-Message"></div>
+          </div>
+
+          <div class="input-box">
+            <div class="titulo">
+              <h2>Senha</h2>
+              <h1>*</h1>
+            </div>
+            <div class = "Inputs"> <input type="text" name = "senha" id = "senha" placeholder="Sua Senha"> </div>
+            <div class = "Error-Message"></div>
+          </div>
+
+          <div class="input-box">
+            <div class="titulo">
+              <h2>Confirme a senha</h2>
+              <h1>*</h1>
+            </div>
+            <div class = "Inputs"> <input type="text" name = "senha2" id = "confirmar-senha" placeholder="Confirme sua Senha"> </div>
+            <div class = "Error-Message"></div>
+          </div>
+
+          
+
+          <div class="center-button">
+            <div class="bott">
+              <input type="submit" class="btn" id = "submit" value="Esqueceu Minha Conta">
+            </div>
+          </div>
+
+
+        </form>
+
+      </div>
+
+
+
+
+
+
+
+    </div>
 
 </body>
 

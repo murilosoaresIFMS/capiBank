@@ -134,7 +134,7 @@ export function DataValidator() {
                 InvalidInputs += 1
             }
         })
-
+        console.log(emptyInputs, InvalidInputs)
         // Ativa o botão se todos os inputs estiverem preenchidos e válidos
         if (emptyInputs == 0 && InvalidInputs == 0) { submit.disabled = false }
 

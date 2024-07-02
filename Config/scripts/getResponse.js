@@ -18,12 +18,12 @@ function getResponse() {
 
         const database = await readColumn('SELECT id, cpf, senha FROM dados_clientes').catch((err) => { console.log(err) })
         const userData = database.rows
+        
         let is_user_found
         let id
 
         for (i = 0; i < userData.length; i++) {
             const user = userData[i]
-
             if (user.cpf == data.cpf && user.senha == data.senha) {
                 is_user_found = true
                 id = user.id

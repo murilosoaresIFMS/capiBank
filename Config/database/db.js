@@ -19,12 +19,13 @@ async function createTable() {
 
     await clients.connect()
 
+    // mudei para length 50 cpf e telefone pq tava dando erro de tamanho
     const query = `CREATE TABLE IF NOT EXISTS dados_clientes (
       ID serial NOT NULL PRIMARY KEY UNIQUE,
       nome VARCHAR(50) NOT NULL,
-      CPF VARCHAR(14) NOT NULL UNIQUE, 
+      CPF VARCHAR(50) NOT NULL UNIQUE, 
       email VARCHAR(50) NOT NULL UNIQUE,
-      telefone VARCHAR(14) NOT NULL UNIQUE,
+      telefone VARCHAR(50) NOT NULL UNIQUE,
       data_nascimento DATE NOT NULL,
       senha VARCHAR(25) NOT NULL
     );`
