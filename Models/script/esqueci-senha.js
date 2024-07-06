@@ -45,6 +45,7 @@ function sendFormData(form) {
         method: 'POST',
         body: JSON.stringify(userData)
     }
+    
     fetch('http://localhost:8080/sendData', requestOptions).then(async (check_email) => {
 
         toggleLoader('deact')

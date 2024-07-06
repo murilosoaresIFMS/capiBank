@@ -1,6 +1,8 @@
 
 const { createColumn, readColumn, updateColumn } = require('../database/db')
+
 const { sendEmail } = require('../scripts/sendEmail')
+const { transferCash, checkCPF } = require('./transferOp')
 const { getError } = require('./getError')
 
 function getResponse() {
@@ -63,12 +65,16 @@ function getResponse() {
         }
     }
 
-    const sendData = (data, res) => {
+    const sendData = (data, res, fetchID) => {
         
         let operation 
-
+        
         if (data.type == 'send_email') {
             operation = sendEmail(data.email)
+        }
+        
+        else if (data.type == 'check_cpf') {
+            operation = checkCPF(data.cpf, fetchID)
         }
 
         operation.then((result) => {

@@ -30,7 +30,7 @@ const server = http.createServer( async (req, res) => {
         }
 
         else if (req.url == '/sendData') {
-            response.sendData(data, res)
+            response.sendData(data, res, fetchID)
         }
  
     }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferência</title>
+    <script type = "module" src = "script/transferencia.js"></script>
+    <style>
+        .transfer-form {
+            display: none;
+        }
+        .transfer-form.open {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h1> Transferência protótipo </h1>
+    <form id = 'check_cpf'>
+        <section>
+            <label for = 'cpf'>Digite o CPF para quem quer transferir: </label>
+            <div class = 'Inputs'><input type = 'text' name = 'cpf' id = 'cpf'></div>
+            <div class = 'Error-Message'></div>
+        </section>
+        <section>   
+            <label for = 'cpf'>Digite o valor que deseja enviar: R$ </label>
+            <div class = 'Inputs'><input type = 'number' name = 'value'></div>
+        </section>
+        <section> 
+            <input type = 'submit' id = 'submit' value = 'ENVIAR'>
+        </section>
+    </form>
+    <div id = 'outcome'></div>
+    <form id = 'confirm_transfer' class = 'transfer-form'>
+        <input type = 'submit' style = 'color: green' value = 'Sim' id = 'yes' class = 'choice'>
+        <input type = 'submit' style = 'color: red' value = 'Não' id = 'no' class = 'choice'>
+    </form>
+</body>
+</html>
