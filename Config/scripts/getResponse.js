@@ -16,6 +16,7 @@ function getResponse() {
     }
 
     /* ============================================================================================================== */
+    // Função para salvar cadastro de usuário
     const saveData = async (data, res) => {
         const operation = await createColumn(data, `INSERT INTO dados_clientes (nome, cpf, email, telefone, data_nascimento, senha) VALUES ($1, $2, $3, $4, $5, $6)`).catch((err) => { console.log(err) })
         const response = operation.outcome == 400 ? getError(operation.error) : 'Cadastro concluído com sucesso!'
@@ -23,12 +24,7 @@ function getResponse() {
     }
 
     /* ============================================================================================================== */
-    // Função para salvar cadastro de usuário
-    const saveData = async (data, res) => {
-        const operation = await createColumn(data, `INSERT INTO dados_clientes (nome, cpf, email, telefone, data_nascimento, senha) VALUES ($1, $2, $3, $4, $5, $6)`).catch((err) => { console.log(err) })
-        const response = operation.outcome == 400 ? getError(operation.error) : 'Cadastro concluído com sucesso!'
-        returnResponse(res, operation.outcome, response)
-    }
+
 
     // Função para validar os dados (login). Também retorna ID como forma de "autenticação"
     const validateData = async (data, res) => {
