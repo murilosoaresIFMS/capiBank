@@ -13,6 +13,7 @@ async function DOMInteraction() {
 
         .then((user) => {
             render.name(user.nome)
+            render.saldo('R$ ' + user.saldo)
             interactionMenu()
             toggleDialogue()
         })

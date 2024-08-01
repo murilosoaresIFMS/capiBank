@@ -18,37 +18,18 @@ async function createTable() {
   try {
 
     await clients.connect()
-  
-    // MUDANÇA AQUI:
 
-    // Inseri a criação de dados_clientes, conta e transferência na query inicial
-
+    // mudei para length 50 cpf e telefone pq tava dando erro de tamanho
     const query = `CREATE TABLE IF NOT EXISTS dados_clientes (
-      cpf VARCHAR(14) UNIQUE PRIMARY KEY,
-      nome_completo VARCHAR(255),
-      email VARCHAR(255),
+      ID serial NOT NULL PRIMARY KEY UNIQUE,
+      nome VARCHAR(50) NOT NULL,
+      CPF VARCHAR(50) NOT NULL UNIQUE, 
+      email VARCHAR(50) NOT NULL UNIQUE,
       telefone VARCHAR(50) NOT NULL UNIQUE,
-      data_de_nascimento DATE,
-      senha VARCHAR(255)
-    );
-    
-    CREATE TABLE IF NOT EXISTS conta (
-      cpf VARCHAR(14) UNIQUE PRIMARY KEY,
-      nome_usuario VARCHAR(255),
-      saldo FLOAT,
-      ativo BOOLEAN
-    );
-    
-    CREATE TABLE IF NOT EXISTS transferencia (
-      cpf_envia VARCHAR(14),
-      valor_anterior FLOAT,
-      valor_pos_transferencia FLOAT,
-      cpf_recebe VARCHAR(14),
-      saldo_anterior FLOAT,
-      saldo_pos_transferencia FLOAT,
-      date TIMESTAMP
-    );
-    `
+      data_nascimento DATE NOT NULL,
+      senha VARCHAR(25) NOT NULL,
+      ativo BOOLEAN DEFAULT TRUE
+    );`
     
     await clients.query(query)
   }
@@ -61,36 +42,26 @@ async function createTable() {
   return isDatabaseConnected
 }
 
-// CREATE: Essa função de objetivo de criar alguma coluna dentro de uma tabela, recebendo como parâmetro:
-  // 1. Dados que serão salvos na tabela
-  // 2. A query customizada para salvar na tabela
 async function createColumn(data, custom_query) {
 
-  var data_values = []
   var outcome = 400
   var error
 
-  Object.keys(data).forEach((item) => {
-    data_values.push(String(data[item])) // Pegando os valores do dicionário, convertendo todos para STRING e armazenando em um array
-  })
-
   try {
     await clients.connect()
-    const result = await clients.query(custom_query, data_values)
+    const result = await clients.query(custom_query, [data.nome, data.cpf, data.email, data.telefone, data.data_nascimento, data.senha])
     if (result.rowCount > 0) { outcome = 200 }
   }
   catch (err) {
     console.log(err)
     error = err
   }
-  finally { 
-      return { outcome , error }
+  finally {
+    return { outcome, error }
   }
-  
+
 }
 
-// READ: Essa função tem objetivo de ler os dados da coluna, utilizado no projeto para:
-  // 1. Capturar dados extraídos do banco e renderizá-los na DOM
 async function readColumn(custom_query) {
 
   let result
@@ -124,9 +95,9 @@ async function updateColumn(custom_query, data) {
       console.log(err)
     }
     finally {
-      return { outcome, error }
+      return {outcome, error }
     }
 }
 
-  
+
 module.exports = { createTable, createColumn, readColumn, updateColumn };
